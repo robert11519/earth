@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>地球軌道</title>
+    <style>
+
+      html, body{
+        height:100%;
+        overflow: hidden;
+      }
+
+      #space{
+        background: radial-gradient(#555, #000);
+      }
+
+      @keyframes starslight{
+        from{ opacity: 1;}
+        to{ opacity: 0.3;}
+
+      }
+
+      @keyframes sunlight {
+        from{ box-shadow: 0 0 45px #ffce75;}
+        to{ box-shadow: 0 0 90px #ffce75;}
+      }
+
+      @keyframes spin {
+        from{ transform: rotate(0);}
+          to{transform: rotate(360deg);}
+      }
+
+      #stars{
+
+        background-image: url("star.png");
+        background-size: cover;
+        height:100%;
+        position: relative;
+        top: 30PX;
+        animation: starslight 2s infinite alternate;
+      }
+
+      #sun{
+        width: 200px;
+        height: 200px;
+        background-color: orange;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+
+        margin-top: -100px;
+        margin-left: -100px;
+        opacity: 0.9;
+        border-radius: 50%;
+        background: radial-gradient(#ff0000,#ffce75);
+
+        box-shadow: 0 0 45px #ffce75;
+        animation: sunlight 5s infinite alternate;
+      }
+
+      #orbit{
+        height: 600px;
+        width: 600px;
+        border: 1px dashed #12e887;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-top: -300px;
+        margin-left:-300px ;
+        border-radius: 50%;
+        animation: spin 30s linear infinite;
+      }
+
+      #moon-orbit{
+        height: 150px;
+        width: 150px;
+        border: 1px dashed #12e887;
+        position: absolute;
+        top: 50%;
+        left: 0;
+        margin-top: -75px;
+        margin-left: -75px ;
+        border-radius: 50%;
+        animation: spin 30s linear infinite;
+      }
+
+      #earth{
+        position: absolute;
+        top: -40px;
+        left: -40px;
+        margin-top: 300px;
+        animation: spin 30s linear infinite;
+      }
+
+      #moon{
+        position: absolute;
+        top: -13px;
+        left: -13px;
+        margin-top: 75px;
+        animation: spin 30s linear infinite;
+      }
+    </style>
+  </head>
+  <body id="space">
+    <div id="stars"></div>
+    <div id="sun"></div>
+    <div id="orbit">
+      <img id="earth" src="earth.png" alt="earth" width="80px;" height="80px;">
+      <div id="moon-orbit">
+          <img id="moon" src="moon.png" alt="moon" width="26px">
+      </div>
+    </div>
+  </body>
+</html>
